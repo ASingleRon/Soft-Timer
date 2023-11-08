@@ -95,54 +95,51 @@ export default function App() {
           </View>
         </View>
         ): (
-    <View style={styles.clockContainer}>
-      <View style= {styles.singleTimeBox}>
-        <TextInput 
-          style={styles.timerBox} 
-          placeholder={String(hours)}
-          onChangeText={setHours}
-          value={String(hours)}
-          keyboardType='number-pad'
-        />
-        <Text>Hours</Text>
-      </View>
-      <View style= {styles.singleTimeBox}>
-        <TextInput 
-          style={styles.timerBox}
-          placeholder={String(minutes)}
-          onChangeText={setMinutes}
-          value={String(minutes)}
-          keyboardType='number-pad'
-        />
-        <Text>Minutes</Text>
-      </View>
-      <View style= {styles.singleTimeBox}>
-        <TextInput 
-          style={styles.timerBox}
-          placeholder={String(seconds)}
-          onChangeText={setSeconds}
-          value={String(seconds)}
-          keyboardType='number-pad'
-        />
-        <Text>Seconds</Text>
-      </View>
-    </View>)}
-
-
-
+        <View style={styles.clockContainer}>
+          <View style= {styles.singleTimeBox}>
+            <TextInput 
+              style={styles.timerBox} 
+              placeholder={String(hours)}
+              onChangeText={setHours}
+              value={String(hours)}
+              keyboardType='number-pad'
+            />
+            <Text>Hours</Text>
+          </View>
+          <View style= {styles.singleTimeBox}>
+            <TextInput 
+              style={styles.timerBox}
+              placeholder={String(minutes)}
+              onChangeText={setMinutes}
+              value={String(minutes)}
+              keyboardType='number-pad'
+            />
+            <Text>Minutes</Text>
+          </View>
+          <View style= {styles.singleTimeBox}>
+            <TextInput 
+              style={styles.timerBox}
+              placeholder={String(seconds)}
+              onChangeText={setSeconds}
+              value={String(seconds)}
+              keyboardType='number-pad'
+            />
+            <Text>Seconds</Text>
+          </View>
+        </View>)}
 
       <View style={styles.buttonsContainer}>
           {timerOn ? (
             <Pressable 
-            style={styles.stopButton}
-            onPress={()=>{setTimerOn(!timerOn);}}
+              style={styles.stopButton}
+              onPress={()=>{setTimerOn(!timerOn);}}
             >
               <Text>Stop</Text>
             </Pressable>
           ) : (
             <Pressable 
-            style={styles.startButton}
-            onPress={()=>{setTimerOn(!timerOn);}}
+              style={styles.startButton}
+              onPress={()=>{setTimerOn(!timerOn);}}
             >
               <Text>Start</Text>
             </Pressable>
@@ -162,7 +159,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: 'purple',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -171,7 +167,6 @@ const styles = StyleSheet.create({
     width:'70%',
     alignItems: 'center',
     justifyContent: 'space-around',
-    //backgroundColor: 'blue',
     flexDirection: 'row',
     
   },
@@ -188,7 +183,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    //backgroundColor: 'red',
     width: '100%',
   },
   singleTimeBox: {
@@ -197,12 +191,10 @@ const styles = StyleSheet.create({
     width: '33.3%',
     justifyContent: 'center',
     alignItems: 'center',
-    //borderWidth: 1,
   },
   titleInputTextContainer: {
     flex: 1,
     width: '100%',
-    //backgroundColor: "yellow",
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
