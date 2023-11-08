@@ -30,7 +30,7 @@ export default function App() {
       trigger: null,
     });
   }
-  
+
   const zeroingClock = () => {
     setHours(0); 
     setMinutes(0); 
@@ -105,17 +105,27 @@ export default function App() {
           <Text>Seconds</Text>
         </View>
       </View>
-      {/* 
-        TODO: make button go from start to stop when pressed (vise versa)
-        TODO: add borders to all buttons (place view around and add style)    
 
-      */}
       <View style={styles.buttonsContainer}>
-        <Pressable onPress={()=>{setTimerOn(!timerOn);}}>
-          <Text>Start/Stop</Text>
-        </Pressable>
-
-        <Pressable onPress={()=>{resetButtonLogic()}}>
+          {timerOn ? (
+            <Pressable 
+            style={styles.stopButton}
+            onPress={()=>{setTimerOn(!timerOn);}}
+            >
+              <Text>Stop</Text>
+            </Pressable>
+          ) : (
+            <Pressable 
+            style={styles.startButton}
+            onPress={()=>{setTimerOn(!timerOn);}}
+            >
+              <Text>Start</Text>
+            </Pressable>
+          )}
+        <Pressable 
+          style={styles.resetButton} 
+          onPress={()=>{resetButtonLogic()}}
+        >
           <Text>Reset</Text>         
         </Pressable>
       </View>
@@ -177,5 +187,17 @@ const styles = StyleSheet.create({
     borderWidth:1,
     textAlign: 'left',
     padding: 5,
-  }  
+  },
+  resetButton: {
+    backgroundColor:'#0096FF',
+    padding: 10,
+  },
+  startButton:{
+    backgroundColor:'#50C878',
+    padding: 10,
+  },
+  stopButton:{
+    backgroundColor:'#FF3131',
+    padding: 10,
+  },
 });
