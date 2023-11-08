@@ -73,38 +73,63 @@ export default function App() {
           value={timerTitle}
         />
       </View>
-      <View style={styles.clockContainer}>
-        <View style= {styles.singleTimeBox}>
-          <TextInput 
-            style={styles.timerBox} 
-            placeholder={String(hours)}
-            onChangeText={setHours}
-            value={String(hours)}
-            keyboardType='number-pad'
-          />
-          <Text>Hours</Text>
+      {timerOn ? (
+        <View style={styles.clockContainer}>
+          <View style= {styles.singleTimeBox}>
+            <View style={styles.timerBox}>
+              <Text style={styles.centerText}>{hours}</Text>
+            </View>
+            <Text>Hours</Text>
+          </View>
+          <View style= {styles.singleTimeBox}>
+            <View style={styles.timerBox}>
+              <Text style={styles.centerText}>{minutes}</Text>
+            </View>
+            <Text>Minutes</Text>
+          </View>
+          <View style= {styles.singleTimeBox}>
+            <View style={styles.timerBox}>
+              <Text style={styles.centerText}>{seconds}</Text>
+            </View>
+            <Text>Seconds</Text>
+          </View>
         </View>
-        <View style= {styles.singleTimeBox}>
-          <TextInput 
-            style={styles.timerBox}
-            placeholder={String(minutes)}
-            onChangeText={setMinutes}
-            value={String(minutes)}
-            keyboardType='number-pad'
-          />
-          <Text>Minutes</Text>
-        </View>
-        <View style= {styles.singleTimeBox}>
-          <TextInput 
-            style={styles.timerBox}
-            placeholder={String(seconds)}
-            onChangeText={setSeconds}
-            value={String(seconds)}
-            keyboardType='number-pad'
-          />
-          <Text>Seconds</Text>
-        </View>
+        ): (
+    <View style={styles.clockContainer}>
+      <View style= {styles.singleTimeBox}>
+        <TextInput 
+          style={styles.timerBox} 
+          placeholder={String(hours)}
+          onChangeText={setHours}
+          value={String(hours)}
+          keyboardType='number-pad'
+        />
+        <Text>Hours</Text>
       </View>
+      <View style= {styles.singleTimeBox}>
+        <TextInput 
+          style={styles.timerBox}
+          placeholder={String(minutes)}
+          onChangeText={setMinutes}
+          value={String(minutes)}
+          keyboardType='number-pad'
+        />
+        <Text>Minutes</Text>
+      </View>
+      <View style= {styles.singleTimeBox}>
+        <TextInput 
+          style={styles.timerBox}
+          placeholder={String(seconds)}
+          onChangeText={setSeconds}
+          value={String(seconds)}
+          keyboardType='number-pad'
+        />
+        <Text>Seconds</Text>
+      </View>
+    </View>)}
+
+
+
 
       <View style={styles.buttonsContainer}>
           {timerOn ? (
@@ -156,6 +181,7 @@ const styles = StyleSheet.create({
     borderColor:'black',
     borderWidth:1,
     textAlign: 'center',
+    justifyContent: 'center',
   },
   buttonsContainer: {
     flex: 1,
@@ -200,4 +226,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#FF3131',
     padding: 10,
   },
+  centerText: {
+    textAlign: 'center',
+  }
 });
